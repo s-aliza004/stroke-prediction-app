@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Stroke Prediction</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Heart Stroke Prediction</h1>
+        <form method="POST" id="prediction-form" autocomplete="off">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="gender">{{ form.gender.label }}</label>
+                {{ form.gender }}
+            </div>
+            <div class="form-group">
+                <label for="ever_married">{{ form.ever_married.label }}</label>
+                {{ form.ever_married }}
+            </div>
+            <div class="form-group">
+                <label for="work_type">{{ form.work_type.label }}</label>
+                {{ form.work_type }}
+            </div>
+            <div class="form-group">
+                <label for="residence_type">{{ form.residence_type.label }}</label>
+                {{ form.residence_type }}
+            </div>
+            <div class="form-group">
+                <label for="smoking_status">{{ form.smoking_status.label }}</label>
+                {{ form.smoking_status }}
+            </div>
+            <div class="form-group">
+                <label for="age">{{ form.age.label }}</label>
+                {{ form.age }}
+            </div>
+            <div class="form-group">
+                <label for="avg_glucose_level">{{ form.avg_glucose_level.label }}</label>
+                {{ form.avg_glucose_level }}
+            </div>
+            <div class="form-group">
+                <label for="bmi">{{ form.bmi.label }}</label>
+                {{ form.bmi }}
+            </div>
+            <div class="form-group">
+                <label for="hypertension">{{ form.hypertension.label }}</label>
+                {{ form.hypertension }}
+            </div>
+            <div class="form-group">
+                <label for="heart_disease">{{ form.heart_disease.label }}</label>
+                {{ form.heart_disease }}
+            </div>
+            <button type="submit" class="submit-button">Predict</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    
+    <script>
+        // Display toast and clear form after submission
+        {% for message in messages %}
+            toastr.options = {
+                "positionClass": "toast-center",
+                "closeButton": true,
+                "progressBar": true,
+                "timeOut": "5000",  // Time the toast will stay
+                "onHidden": function() {
+                    // Clear form fields after the toast is hidden
+                    document.getElementById("prediction-form").reset();
+                }
+            };
+
+            // Check if message is an error or success
+            {% if message.tags == "error" %}
+                toastr.error("{{ message }}");
+            {% elif message.tags == "success" %}
+                toastr.success("{{ message }}");
+            {% endif %}
+        {% endfor %}
+    </script>
+</body>
+</html>

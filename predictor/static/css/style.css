@@ -1,0 +1,131 @@
+/* General Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/img.jpg');; /* Background image related to stroke */
+    background-size: cover; /* Cover the whole page */
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 20px;
+    opacity: 0.8; 
+}
+
+/* Container for form */
+.container {
+    max-width: 600px; /* Maximum width for the form */
+    margin: auto;
+    background: rgba(255, 255, 255, 0.4); /* White background with lighter transparency */
+    padding: 20px; /* Padding inside the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+/* Header Style */
+h1 {
+    text-align: center; /* Centered header */
+    color: white; /* Change text color to white */
+    font-size: 2.5em; /* Increase font size */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    animation: fadeIn 1.5s ease-in-out; /* Add animation */
+    cursor: pointer;
+}
+
+h1:hover{
+
+    color: #c9302c; /* Hover par background color change */
+    transform: scale(1.05); /* Button ko thoda sa bada karein jab hover ho */
+
+
+
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Start transparent */
+        transform: translateY(-20px); /* Move up */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateY(0); /* Back to original position */
+    }
+}
+
+
+
+
+/* Numeric fields (age, avg_glucose_level, bmi) */
+input[name="age"], input[name="avg_glucose_level"], input[name="bmi"] {
+    width: 96%; /* Adjusted width for numeric fields */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;   
+    background-color: #f8f9fa; /* Light background for consistency */
+    border: 2px solid red; /* Red outline */
+
+}
+
+/* Button Style */
+button {
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 58px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 0 auto;
+    font-family: ui-sans-serif;
+
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #c9302c; /* Hover par background color change */
+    transform: scale(1.05); /* Button ko thoda sa bada karein jab hover ho */
+}
+
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;   
+    background-color: #f8f9fa; /* Light background for consistency */
+    border: 2px solid red; /* Red outline */;
+}
+
+/* Specific styles for input fields */
+input[name="age"], 
+input[name="avg_glucose_level"], 
+input[name="bmi"] {
+    width: 96%; /* Adjust the width of these fields */
+    border: 2px solid red; /* Red outline */
+}
+
+/* Form Group Heading Style */
+.form-group label {
+    color: white; 
+    font-size: 18px; 
+    font-weight: bold;
+    margin-bottom: 5px; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.toast-center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.hidden {
+    display: none;
+}
+

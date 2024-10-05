@@ -1,0 +1,28 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction Result</title>
+     
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script>
+        function showResult() {
+            const prediction = "{{ prediction }}";
+            let message = "";
+            if (prediction == 1) {
+                message = "The patient is likely to have a stroke.";
+            } else {
+                message = "The patient is not likely to have a stroke.";
+            }
+            alert(message);  // Display the result in an alert box
+        }
+    </script>
+</head>
+<body onload="showResult()">
+    <h1>Stroke Prediction Result</h1>
+    <p>The prediction has been made. Please check the alert for details.</p>
+</body>
+</html>
