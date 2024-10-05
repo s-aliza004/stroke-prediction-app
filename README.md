@@ -1,4 +1,5 @@
-![image](https://github.com/user-attachments/assets/c7a12da7-f877-4798-879c-d4e55c8c3505)
+![Uploading screencapture-127-0-0-1-8000-2024-10-06-00_21_17.png…]()
+
 
 # stroke-prediction-app
 "A web application for predicting the risk of stroke using machine learning models based on user-provided health data."
