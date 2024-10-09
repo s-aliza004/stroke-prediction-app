@@ -6,7 +6,8 @@
 Detailed Description:
 
 "This project is a heart stroke prediction web application built with Django. It utilizes a pre-trained Random Forest model to assess the likelihood of a stroke based on various health parameters entered by the user. The app aims to raise awareness and provide early insights into stroke risks."
-Technical Description:
+
+# Technical Description:
 
 "Heart Stroke Prediction App using Django and Machine Learning. This application allows users to input various health metrics, such as age, glucose levels, and lifestyle factors, to predict the likelihood of stroke occurrence. Features include data validation, responsive design, and user-friendly interface."
 
